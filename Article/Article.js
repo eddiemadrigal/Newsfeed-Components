@@ -84,6 +84,15 @@ const data = [{
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'My Custom Title',
+    date: 'February 12, 2020',
+    firstParagraph: `This is paragraph 1 and it's a doozy!`,
+
+    secondParagraph: `Oh, to paragraph 2, you've gone Mad!`,
+
+    thirdParagraph: `Now I'm on to getting live data!!!`
   }
 ];
 
@@ -110,16 +119,25 @@ function createArticle(obj) {
   const span = document.createElement('span');
 
   articleDiv.append(h2Title, pDate, p1, p2, p3, span);
+  articleDiv.classList.add('article');
+  pDate.classList.add('date');
+  span.classList.add('expandButton');
 
   h2Title.textContent = obj.title;
   pDate.textContent = obj.date;
   p1.textContent = obj.firstParagraph;
   p2.textContent = obj.secondParagraph;
   p3.textContent = obj.thirdParagraph;
+  span.innerHTML = 'open / close';
+
+  span.addEventListener('click', (e) => {
+    articleDiv.classList.toggle('article-open');
+  });
 
   return articleDiv;
 
 }
+
 
 const articles = document.querySelector('.articles');
 
