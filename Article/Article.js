@@ -1,7 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -98,6 +97,38 @@ const data = [
 
     <span class='expandButton'></span>
   </div>
+
+  */
+function createArticle(obj) {
+
+  const articleDiv = document.createElement('div');
+  const h2Title = document.createElement('h2');
+  const pDate = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const span = document.createElement('span');
+
+  articleDiv.append(h2Title, pDate, p1, p2, p3, span);
+
+  h2Title.textContent = obj.title;
+  pDate.textContent = obj.date;
+  p1.textContent = obj.firstParagraph;
+  p2.textContent = obj.secondParagraph;
+  p3.textContent = obj.thirdParagraph;
+
+  return articleDiv;
+
+}
+
+const articles = document.querySelector('.articles');
+
+data.map(item => {
+  articles.appendChild(createArticle(item));
+});
+
+
+/*
 
   Hint: You will need to use createElement more than once here!
 
