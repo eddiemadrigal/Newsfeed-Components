@@ -117,11 +117,13 @@ function createArticle(obj) {
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
   const span = document.createElement('span');
+  const divDelete = document.createElement('div');
 
-  articleDiv.append(h2Title, pDate, p1, p2, p3, span);
+  articleDiv.append(divDelete, h2Title, pDate, p1, p2, p3, span);
   articleDiv.classList.add('article');
   pDate.classList.add('date');
   span.classList.add('expandButton');
+  divDelete.classList.add('delete');
 
   h2Title.textContent = obj.title;
   pDate.textContent = obj.date;
@@ -129,8 +131,9 @@ function createArticle(obj) {
   p2.textContent = obj.secondParagraph;
   p3.textContent = obj.thirdParagraph;
   span.innerHTML = 'open / close';
+  divDelete.innerHTML = 'delete'
 
-  span.addEventListener('click', (e) => {
+  span.addEventListener('click', () => {
     articleDiv.classList.toggle('article-open');
   });
 

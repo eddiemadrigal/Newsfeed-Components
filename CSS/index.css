@@ -44,14 +44,14 @@
   border-radius: 10px;
   background-color: white;
   position: relative;
-  height: 50px;
+  height: 40px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
 }
 .article h2 {
   font-size: 28px;
   padding: 0;
-  margin: 15px 0 0;
+  margin: 0;
 }
 .article .date {
   margin: 0;
@@ -71,6 +71,14 @@
   cursor: pointer;
   transform: translate(-50%);
   background-color: white;
+}
+.article .delete {
+  color: red;
+  padding-top: 5px;
+  margin: 0;
+  float: right;
+  font-size: 0.7rem;
+  cursor: pointer;
 }
 .article-open {
   height: 400px;
